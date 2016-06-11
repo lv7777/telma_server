@@ -43,3 +43,12 @@ socketioを使ってwebsocket通信を担当する。
 * eslint
 
 めっちゃ大事。
+
+# このプロジェクトの進め方・心構え等
+
+github flowの派生版。
+
+基本的にはmaster branchで行う。
+
+ただしバグ修正のみブランチを切る。ブランチ名にはissue numberを含めること。
+
