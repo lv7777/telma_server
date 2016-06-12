@@ -28,6 +28,8 @@ socketioを使ってwebsocket通信を担当する。
 
 * mocha
 
+* super
+
 ## moduleの結合
 
 * webpack
@@ -43,6 +45,17 @@ socketioを使ってwebsocket通信を担当する。
 * eslint
 
 めっちゃ大事。
+
+## 認証系
+
+* passport
+
+* passport-twitter
+
+## その他
+
+jsdoc(api書くようのいいのがあったらそっち使う。
+
 
 # このプロジェクトの進め方・心構え等
 
