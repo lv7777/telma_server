@@ -5,24 +5,16 @@
 // //sql.jsがいる。
 // //socketioがいる。
 
-const connection={
-    query(data,cb){
-        return "ok";
-    }
-};
-function querysanitizing(...data){
-    return "stab";
-}
 router.post('/login',function(req,res){
     console.log("/login");
-    connection.query(querysanitizing(req.body.email,req.body.password),function(rows,fields){
+    sql.query(sql.escape(req.body.email,req.body.password),function(rows,fields){
         
         res.send();
     });
 });
 
 router.post('/options',function(req,res){
-    connection.query(querysanitizing(),function(){
+    sql.query(sql.escape(),function(){
         
     });
 });
@@ -31,7 +23,7 @@ router.post('/options',function(req,res){
 //autoincliment,selial(useridの連番を作るとき)
 router.post('/register',function(req,res){
     console.log("/register");
-    connection.query(querysanitizing(req.username,req.password,req.tel,req.email),function(rows,field){
+    sql.query(sql.escape(req.username,req.password,req.tel,req.email),function(rows,field){
         
     });
     
@@ -40,7 +32,7 @@ router.post('/register',function(req,res){
 
 router.get('/keiji',function(req,res){
     console.log("/keiji");
-    connection.query(querysanitizing(req.query.userid,req.query.region),function(){
+    sql.query(sql.escape(req.query.userid,req.query.region),function(){
         
     });
     //リスト一覧。
@@ -50,7 +42,7 @@ router.get('/keiji',function(req,res){
 
 router.post('/keiji/post',function(req,res){
     console.log("keiji/post");
-    connection.connect(querysanitizing(req.body.content,req.body.title,req.body.userid),function(row,field){
+    sql.connect(sql.escape(req.body.content,req.body.title,req.body.userid),function(row,field){
         
     });
  //   console.log(req.user);
@@ -59,7 +51,7 @@ router.post('/keiji/post',function(req,res){
 
 router.get('/keiji/deteal',function(req,res){
     console.log("/keiji/deteal");
-    connection.connect(querysanitizing(),function(row,field){
+    sql.connect(sql.escape(),function(row,field){
         
     });
     //`
@@ -67,7 +59,7 @@ router.get('/keiji/deteal',function(req,res){
 
 router.get('/kasikari',function(req,res){
     console.log("/kasikari");
-    connection.connect(querysanitizing(req.query.userid),function(row,field){
+    sql.connect(sql.escape(req.query.userid),function(row,field){
         
     });
  //   console.log(req.user);
@@ -76,7 +68,7 @@ router.get('/kasikari',function(req,res){
 
 router.post('/kasikari/post',function(req,res){
     console.log("/kasikari/post");
-    connection.connect(querysanitizing(req.body.content,req.body.title,req.body.userid),function(row,field){
+    sql.connect(sql.escape(req.body.content,req.body.title,req.body.userid),function(row,field){
         
     });
  //   console.log(req.user);
@@ -85,7 +77,7 @@ router.post('/kasikari/post',function(req,res){
 
 router.get('/kasikari/deteal',function(req,res){
     console.log("/kasikari/deteal");
-    connection.connect(querysanitizing(req.query.detealid),function(row,field){
+    sql.connect(sql.escape(req.query.detealid),function(row,field){
         
     });
  //   console.log(req.user);
