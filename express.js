@@ -1,6 +1,6 @@
-let express=require("express");
-let router=require("./router.js");
-let app=express();
+const express=require("express");
+const router=require("./router.js");
+const app=express();
 app.use("/",router);//routerの使用
 app.listen(3000);
 

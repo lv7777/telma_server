@@ -1,9 +1,18 @@
-let socket=require("./socketio.js");
-let express=require("express");
-let router=express.Router();
-//sql.jsがいる。
-//socketioがいる。
+ const socket=require("./socketio.js");
+ const sql=require("./sql.js");
+ const express=require("express");
+ const router=express.Router();
+// //sql.jsがいる。
+// //socketioがいる。
 
+const connection={
+    query(data,cb){
+        return "ok";
+    }
+};
+function querysanitizing(...data){
+    return "stab";
+}
 router.post('/login',function(req,res){
     console.log("/login");
     connection.query(querysanitizing(req.body.email,req.body.password),function(rows,fields){
@@ -24,7 +33,7 @@ router.post('/register',function(req,res){
     console.log("/register");
     connection.query(querysanitizing(req.username,req.password,req.tel,req.email),function(rows,field){
         
-    })
+    });
     
 });
 
@@ -60,7 +69,7 @@ router.get('/kasikari',function(req,res){
     console.log("/kasikari");
     connection.connect(querysanitizing(req.query.userid),function(row,field){
         
-    })
+    });
  //   console.log(req.user);
   //  res.render('s1');
 });
@@ -90,4 +99,4 @@ router.post('/chat',function(req,res){
 });
 
 
-module.export=router
+module.export=router;

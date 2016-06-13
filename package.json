@@ -12,7 +12,7 @@
   "scripts": {
     "test": "mocha test",
     "start": "node main.js",
-    "lint": "eslint"
+    "lint": "eslint main.js express.js router.js socketio.js sql.js"
   },
   "repository": {
     "type": "git",
