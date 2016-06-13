@@ -56,3 +56,29 @@ C:\Users\user\Desktop\g\GeckoLion\telma_server\sql.js
 
 ✖ 10 problems (10 errors, 0 warnings)
   ```
+  
+  ## 4回目、分割したあと
+  
+  ```
+  
+C:\Users\user\Desktop\g\GeckoLion\telma_server\express.js
+  3:44  error  Missing semicolon                               semi
+  4:5   error  'app' is never reassigned, use 'const' instead  prefer-const
+
+C:\Users\user\Desktop\g\GeckoLion\telma_server\router.js
+   7:9  error  'router' is never reassigned, use 'const' instead  prefer-const
+  96:2  error  Missing semicolon                                  semi
+
+C:\Users\user\Desktop\g\GeckoLion\telma_server\socketinit.js
+   1:5   error  'socketio' is never reassigned, use 'const' instead  prefer-const
+   1:34  error  Missing semicolon                                    semi
+   3:5   error  'socket' is never reassigned, use 'const' instead    prefer-const
+   7:39  error  Missing semicolon                                    semi
+   8:26  error  Missing semicolon                                    semi
+   9:7   error  Missing semicolon                                    semi
+  14:2   error  Missing semicolon                                    semi
+
+✖ 11 problems (11 errors, 0 warnings)
+
+```
+  

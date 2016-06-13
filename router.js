@@ -4,7 +4,7 @@ const express = require("express");
 // //socketioがいる。
 
 module.exports = function (socket) {
-    let router = express.Router();
+    const router = express.Router();
 
     // router.post('/login', function (req, res) {
     //     console.log("/login");
@@ -93,4 +93,4 @@ module.exports = function (socket) {
 
     });
     return router;
-}
+};
