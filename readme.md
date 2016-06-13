@@ -6,7 +6,7 @@ telmaの鯖側をsubmoduleとする。
 
 * main.js
 
-すべてのroot. webpack entry point.
+すべてのroot. entry point.
 
 * router.js
 
