@@ -1,4 +1,10 @@
-app.post('/login',function(req,res){
+let socket=require("./socketio.js");
+let express=require("express");
+let router=express.Router();
+//sql.jsがいる。
+//socketioがいる。
+
+router.post('/login',function(req,res){
     console.log("/login");
     connection.query(querysanitizing(req.body.email,req.body.password),function(rows,fields){
         
@@ -6,7 +12,7 @@ app.post('/login',function(req,res){
     });
 });
 
-app.post('/options',function(req,res){
+router.post('/options',function(req,res){
     connection.query(querysanitizing(),function(){
         
     });
@@ -14,7 +20,7 @@ app.post('/options',function(req,res){
 
 
 //autoincliment,selial(useridの連番を作るとき)
-app.post('/register',function(req,res){
+router.post('/register',function(req,res){
     console.log("/register");
     connection.query(querysanitizing(req.username,req.password,req.tel,req.email),function(rows,field){
         
@@ -23,7 +29,7 @@ app.post('/register',function(req,res){
 });
 
 
-app.get('/keiji',function(req,res){
+router.get('/keiji',function(req,res){
     console.log("/keiji");
     connection.query(querysanitizing(req.query.userid,req.query.region),function(){
         
@@ -33,7 +39,7 @@ app.get('/keiji',function(req,res){
   //  res.render('s1');
 });
 
-app.post('/keiji/post',function(req,res){
+router.post('/keiji/post',function(req,res){
     console.log("keiji/post");
     connection.connect(querysanitizing(req.body.content,req.body.title,req.body.userid),function(row,field){
         
@@ -42,7 +48,7 @@ app.post('/keiji/post',function(req,res){
   //  res.render('s1');
 });
 
-app.get('/keiji/deteal',function(req,res){
+router.get('/keiji/deteal',function(req,res){
     console.log("/keiji/deteal");
     connection.connect(querysanitizing(),function(row,field){
         
@@ -50,7 +56,7 @@ app.get('/keiji/deteal',function(req,res){
     //`
 });
 
-app.get('/kasikari',function(req,res){
+router.get('/kasikari',function(req,res){
     console.log("/kasikari");
     connection.connect(querysanitizing(req.query.userid),function(row,field){
         
@@ -59,7 +65,7 @@ app.get('/kasikari',function(req,res){
   //  res.render('s1');
 });
 
-app.post('/kasikari/post',function(req,res){
+router.post('/kasikari/post',function(req,res){
     console.log("/kasikari/post");
     connection.connect(querysanitizing(req.body.content,req.body.title,req.body.userid),function(row,field){
         
@@ -68,7 +74,7 @@ app.post('/kasikari/post',function(req,res){
   //  res.render('s1');
 });
 
-app.get('/kasikari/deteal',function(req,res){
+router.get('/kasikari/deteal',function(req,res){
     console.log("/kasikari/deteal");
     connection.connect(querysanitizing(req.query.detealid),function(row,field){
         
@@ -78,7 +84,10 @@ app.get('/kasikari/deteal',function(req,res){
 });
 
 //socketioを使う。
-app.post('/chat',function(req,res){
+router.post('/chat',function(req,res){
     console.log("/chat");
     
 });
+
+
+module.export=router
