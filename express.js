@@ -1,7 +1,5 @@
 const express=require("express");
 const router=require("./router.js");
-const app=express();
-app.use("/",router);//routerの使用
-app.listen(3000);
-
-module.export=app;
+const socketinit=require("./socketinit.js")
+let app=express();
+app.use(router(socketinit(app.listen(3000) )));//routerの使用
