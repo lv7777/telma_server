@@ -14,8 +14,14 @@
          "object-shorthand": "error",
          "no-whitespace-before-property":"error",
          "no-dupe-class-members":"error",
+         "no-const-assign":"error",
           "prefer-const": "error",
         "prefer-reflect": "error",
-        "prefer-template": "error"
-    }
+        "prefer-template": "error",        
+        "prefer-rest-params": "error",
+        "prefer-spread": "error",
+        "prefer-arrow-callback": "error",
+        "accessor-pairs":"error"
+    },
+    "extends":"eslint:recommended"
 }
