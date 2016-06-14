@@ -8,9 +8,11 @@ module.exports = function (socket) {
 
     router.post('/login', function (req, res) {
         console.log("/login");
-        sql.query(sql.escape(req.body.email, req.body.password), function (rows, fields) {
-            res.send();
-        });
+        // if(req.body.username=="dammy"&&req.body.password)
+        // sql.query(sql.escape(req.body.email, req.body.password), function (rows, fields) {
+        //     res.send();
+        // });
+        res.send({ddd:"ffff"})
     });
 
     router.post('/options', function (req, res) {
