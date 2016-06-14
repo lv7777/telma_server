@@ -1,7 +1,7 @@
 // const assert = require("assert");
 // const request = require("supertest");
 // const express=require("express")
-// const router = require("../supertestlearn.js");;
+// const router = require("../supertestlearn.js");
 // let app=express()
 // app.use(router("tes"));
 // app.listen(3000);
@@ -21,18 +21,19 @@
 //             });
 //     });
 // });
+const router = require("../supertestlearn.js");
 const assert = require("assert");
 var request = require('supertest')
     , express = require('express');
 
 var app = express();
+app.use(router("tes"));
+// app.get('/fefef', function (req, res) {
+//     res.status(400).json({ name: 'tobi' });
+// });
 
-app.get('/user', function (req, res) {
-    res.status(200).json({ name: 'tobi' });
-});
 
-
-describe("GET /chat", () => {
+describe("GET /user", () => {
     it("response is json and format is true", (done) => {
         request(app)
             .get('/user')
