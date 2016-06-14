@@ -1,10 +1,13 @@
 // const mysql=require("mysql");
 
-// const connection=mysql.createConnection({
-//     host:"host",
-//     user:"user",
-//     password:"password"
-// });
+// const takayamaDB={
+//   host:"",
+//   user:"IT",
+//   password:"root"
+// }
+
+// const connection=mysql.createConnection(takayamaDB);
+
 // //connection.escape()
 // connection.connect(function(err) {
 //   if (err) {
@@ -15,11 +18,11 @@
 //   console.log(`connected as id ${connection.threadId}`);
 // });
 
-//module.exports=connection;
+// module.exports=connection;
 
 module.exports={
-  query(...data){
-    console.log(data);
+  query(q,cb){
+    cb(q)
   },
   escape(...data){
     console.log(data);

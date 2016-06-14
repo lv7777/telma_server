@@ -1,5 +1,6 @@
 const sql = require("./sql.js");
 const express = require("express");
+
 //sql.jsがいる。
 // //socketioがいる。
 
@@ -8,7 +9,7 @@ module.exports = function (socket) {
 
     router.post('/login', function (req, res) {
         console.log("/login");
-        // if(req.body.username=="dammy"&&req.body.password)
+        // if(req.body.username=="dammy"&&req.body.password=="dammy")
         // sql.query(sql.escape(req.body.email, req.body.password), function (rows, fields) {
         //     res.send();
         // });
@@ -33,13 +34,26 @@ module.exports = function (socket) {
 
 
     router.get('/keiji', function (req, res) {
+        //useridを撮ってきて、ueridからのregionを撮ってきて
+        console.log(`get the ${req.query.userid} ${req.query.latitude} ${req.query.longitude}`)
+        if(req.query.userid && req.query.latitude && req.query.longitude){
+            //緯度自分から10度以内、経度自分から10度以内を出す。
+            
+          sql.query("SELECT * FROM keijiban WHERE ido ",function(data){
+                res.send({
+                    data:data
+                })
+         });
+        }else{
+            res.status(400).send({
+                status:"error"
+            })
+        }
         console.log("/keiji");
-        res.send({
-            fa: "fff"
-        });
-        // sql.query(sql.escape(req.query.userid,req.query.region),function(){
-
+        // res.send({
+        //     fa: "fff"
         // });
+
         //リスト一覧。
         //   console.log(req.user);
         //  res.render('s1');
@@ -62,7 +76,7 @@ module.exports = function (socket) {
         //`
     });
 
-    router.get('/kasikari', function (req, res) {
+    router.get('kasikari', function (req, res) {
         console.log("/kasikari");
         sql.connect(sql.escape(req.query.userid), function (row, field) {
 
