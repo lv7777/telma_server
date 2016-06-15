@@ -6,7 +6,8 @@
     "eslint": "*",
     "mocha": "*",
     "mysql": "^2.11.1",
-    "supertest": "^1.2.0"
+    "supertest": "^1.2.0",
+    "express":"*"
   },
   "main": "main.js",
   "scripts": {

@@ -132,12 +132,13 @@ module.exports = function (socket) {
     //誰が発信したのかのuseridとかあとは
     router.get('/chat', function (req, res) {
         console.log("/chat");
-        socket.sockets.emit("",{
+        socket.sockets.emit("server2client",{
             data:"ffff"
         });
+        
     });
     
-    router.get('/testconnect', function (req, res) {
+    router.get('/DBtest', function (req, res) {
         console.log("/testconnect");
         // if(req.query.a){
         //  console.log("a isnot specitified")
@@ -150,5 +151,11 @@ module.exports = function (socket) {
         //}
 
     });
+    
+    router.get('/socketiotest', function (req, res) {
+        console.log("/testconnect");
+        res.sendfile("./test/index.html");
+    });
+    
     return router;
 };
