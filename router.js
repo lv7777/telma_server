@@ -100,7 +100,8 @@ module.exports = function (socket) {
         //`
     });
 
-    router.get('kasikari', function (req, res) {
+    router.get('/kasikari', function (req, res) {
+        
         console.log("/kasikari");
         sql.connect(sql.escape(req.query.userid), function (row, field) {
 
@@ -128,8 +129,25 @@ module.exports = function (socket) {
     });
 
     //socketioを使う。
+    //誰が発信したのかのuseridとかあとは
     router.get('/chat', function (req, res) {
         console.log("/chat");
+        socket.sockets.emit("",{
+            data:"ffff"
+        });
+    });
+    
+    router.get('/testconnect', function (req, res) {
+        console.log("/testconnect");
+        // if(req.query.a){
+        //  console.log("a isnot specitified")
+        //  sql.query(`SELECT ${a} FROM user`);
+        // }else{
+         console.log("a isnot specitified")
+         sql.query("SELECT * FROM user",function(raw,collamn){
+             console.log(collamn);
+         });
+        //}
 
     });
     return router;

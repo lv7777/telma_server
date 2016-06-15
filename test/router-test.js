@@ -8,13 +8,13 @@ app.use(router("tes"));
 describe("GET /keiji",()=>{
     it("response is json and error if no request",(done)=>{
         const data="";
-      
         request(app).get("/keiji").expect("Content-Type",/json/).expect(400,done);
     });
         it("掲示板はuseridと緯度、経度が必要 ",(done)=>{
         const data="?userid=XXXX&latitude=888&longitude=888";
         request(app).get("/keiji"+data).expect("Content-Type",/json/).expect(200,done);
     });
+    
 });
 
 describe("POST /login",()=>{

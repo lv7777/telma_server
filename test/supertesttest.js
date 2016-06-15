@@ -35,11 +35,13 @@ app.use(router("tes"));
 
 describe("GET /user", () => {
     it("response is json and format is true", (done) => {
+   console.log(        request(app)
+            .get('/user'))     
         request(app)
             .get('/user')
             .expect('Content-Type', /json/)
             .expect('Content-Length', '15')
-            .expect(200)
+            .expect(500)
             .expect(200,done);
 
     })
