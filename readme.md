@@ -65,3 +65,6 @@ github flowの派生版。
 
 ただしバグ修正のみブランチを切る。ブランチ名にはissue numberを含めること。
 
+# contributing
+
+`npm install`
