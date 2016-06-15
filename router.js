@@ -1,5 +1,6 @@
 const sql = require("./sql.js");
 const express = require("express");
+const ut=require("./utils.js");
 
 //sql.jsがいる。
 // //socketioがいる。
@@ -9,11 +10,24 @@ module.exports = function (socket) {
 
     router.post('/login', function (req, res) {
         console.log("/login");
-        // if(req.body.username=="dammy"&&req.body.password=="dammy")
-        // sql.query(sql.escape(req.body.email, req.body.password), function (rows, fields) {
-        //     res.send();
-        // });
-        res.send({ddd:"ffff"})
+        if (req.body.username == "dammy" && req.body.password == "dammy") {
+            sql.query(sql.escape(req.body.email, req.body.password), function (rows, fields) {
+                if(1){
+                   res.status(200).send({
+                       status:"ok"
+                   })
+                }else{
+                   res.status(400).send({
+                       status:"this user was not found"
+                   });
+                }
+
+            });
+        }
+
+        res.status(400).send({
+           status:"specitified username and password" 
+        });
     });
 
     router.post('/options', function (req, res) {
@@ -39,14 +53,24 @@ module.exports = function (socket) {
         if(req.query.userid && req.query.latitude && req.query.longitude){
             //緯度自分から10度以内、経度自分から10度以内を出す。
             
-          sql.query("SELECT * FROM keijiban WHERE ido ",function(data){
-                res.send({
-                    data:data
-                })
-         });
+            sql.query("get userid is existed",function(raw,field){
+                //存在しているなら
+                if(1){
+                    sql.query("SELECT * FROM keijiban WHERE ido ", function (raw, field) {
+                        //ut.boolPosition()
+                        res.status(200).send({
+                            data: data
+                        })
+                    });
+                }else{
+                    res.status(400).send({
+                        status:"userid was not found"
+                    })
+                }
+            });
         }else{
             res.status(400).send({
-                status:"error"
+                status:"this api require userid,latitude,longitude"
             })
         }
         console.log("/keiji");
