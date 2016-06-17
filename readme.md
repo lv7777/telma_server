@@ -6,7 +6,13 @@ telmaの鯖側をsubmoduleとする。
 
 * main.js
 
-すべてのroot. entry point.
+~~~すべてのroot. entry point.~~~
+
+warning:現在express.jsがサーバーを起動するファイルとなっています。
+
+* express.js
+
+expressサーバーを起動する。ルーティングやsqlの処理等はいろんなjsファイルに投げている。
 
 * router.js
 
@@ -51,6 +57,12 @@ socketioを使ってwebsocket通信を担当する。
 * passport
 
 * passport-twitter
+
+# express middleware
+
+* body-perser
+
+postを受け取るときに絶対必要。これがないとパラメータを受け取れない。
 
 ## その他
 
