@@ -7,7 +7,16 @@ const ut=require("./utils.js");
 
 module.exports = function (socket) {
     const router = express.Router();
-
+    router.post("/",(req,res)=>{
+        
+                console.log("/register");
+        // const data={
+        //     word:"tes"
+        // // };
+        
+        console.log(req.body)
+        
+    })
     router.post('/login', function (req, res) {
         console.log("/login");
         if (req.body.username == "dammy" && req.body.password == "dammy") {
@@ -40,9 +49,19 @@ module.exports = function (socket) {
     //autoincliment,selial(useridの連番を作るとき)
     router.post('/register', function (req, res) {
         console.log("/register");
-        sql.query(sql.escape(req.username, req.password, req.tel, req.email), function (rows, field) {
-
-        });
+        // const data={
+        //     word:"tes"
+        // // };
+        
+        console.log(req.body)
+        // sql.query(`insert into ng_word(word) value('${req.body.user}')`,function(raw,collamn){
+        //      console.log(collamn);
+        //  });
+        sql.query(`insert into user(fullname,password,email,tel,image,googleplus,facebook_id,twitter_id) values('${ req.body.fullname }','${ req.body.password }','${ req.body.email }','${ req.body.tel }',
+                                                                                                                         '${ req.body.image }','${ req.body.googleplus }','${ req.body.facebook_id }','${ req.body.twitter_id }')`,function(raw,collamn){
+             console.log(collamn);
+         })
+         console.log("/registerend");
 
     });
 
@@ -159,3 +178,9 @@ module.exports = function (socket) {
     
     return router;
 };
+
+// function qff(error,row,column){
+//   console.log("erorr   "+error);  
+//   console.log("row "+row)
+//   console.log("column  "+column)
+// }
