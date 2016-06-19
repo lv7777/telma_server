@@ -6,9 +6,9 @@ telmaの鯖側をsubmoduleとする。
 
 * main.js
 
-~~~すべてのroot. entry point.~~~
+~~すべてのroot. entry point.~~
 
-warning:現在express.jsがサーバーを起動するファイルとなっています。
+*warning:現在express.jsがサーバーを起動するファイルとなっています。*
 
 * express.js
 
