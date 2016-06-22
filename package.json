@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "telma's server.",
   "devDependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
     "eslint": "*",
+    "express": "*",
+    "express-session": "^1.13.0",
     "mocha": "*",
     "mysql": "^2.11.1",
-    "supertest": "^1.2.0",
-    "express": "*",
-    "body-parser": "^1.15.1"
+    "supertest": "^1.2.0"
   },
   "main": "main.js",
   "scripts": {
