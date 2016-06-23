@@ -5,4 +5,6 @@ const app=express();
 var bodyParser = require('body-parser');
 app.use(bodyParser());
 app.use(express.static("./test/"))
-app.use(router(socketinit(app.listen(3000) )));//routerの使用
+app.use(router(socketinit(app.listen( process.env.PORT || 3000 ,function(){
+    "start"+this.address().port;
+}) )));//routerの使用

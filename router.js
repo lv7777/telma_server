@@ -173,7 +173,7 @@ module.exports = function (socket) {
     
     router.get('/socketiotest', function (req, res) {
         console.log("/testconnect");
-        res.sendfile("./test/index.html");
+        res.sendfile(__dirname+"/test/index.html");
     });
     
      router.post('/test2', function (req, res) {
