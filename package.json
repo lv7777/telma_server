@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "description": "telma's server.",
   "dependencies": {
-    "express":"*",
-    "body-parser":"*"
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "eslint": "*",
+    "express": "*",
+    "express-session": "^1.13.0",
+    "mocha": "*",
+    "mysql": "^2.11.1",
+    "supertest": "^1.2.0",
+    "socket.io":"*"
   },
-  "main": "main.js",
+  "main": "express.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "node main.js",
+    "lint": "eslint main.js express.js router.js socketinit.js sql.js utils.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lv7777/telma_server.git"
