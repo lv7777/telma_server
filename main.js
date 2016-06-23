@@ -7,13 +7,13 @@ app.use(express.static("/"));
 
 app.get("/",(req,res)=>{
     console.log("kita")
-    res.sendFile("index.html");
+    res.sendFile(__dirname+"/index.html");
 })
 
 app.post("/",(req,res)=>{
     console.log("posted")
     console.log(req.body)
-    res.sendFile("index.html");
+    res.sendFile(__dirname+"/index.html");
 })
 
 
