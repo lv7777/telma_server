@@ -34,7 +34,7 @@ module.exports={
   query(q,cb){
     cb(q)
   },
-  escape(...data){
+  escape(data){
     console.log(data);
   },
   notfound(obj){
