@@ -10,17 +10,12 @@
     "express-session": "^1.13.0",
     "mocha": "*",
     "mysql": "^2.11.1",
-<<<<<<< HEAD
     "supertest": "^1.2.0",
-    "socket.io":"*"
-=======
+    "socket.io":"*",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google": "^0.3.0",
-    "passport-twitter": "^1.0.4",
-    "socket.io": "*",
-    "supertest": "^1.2.0"
->>>>>>> 50911f7a0e2aca0270726d8bd795fabac125afef
+    "passport-twitter": "^1.0.4"
   },
   "main": "express.js",
   "scripts": {
