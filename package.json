@@ -6,16 +6,17 @@
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.3",
     "eslint": "*",
+    "eslint-plugin-node": "^1.5.1",
     "express": "*",
     "express-session": "^1.13.0",
     "mocha": "*",
     "mysql": "^2.11.1",
-    "supertest": "^1.2.0",
-    "socket.io":"*",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google": "^0.3.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "socket.io": "*",
+    "supertest": "^1.2.0"
   },
   "main": "express.js",
   "scripts": {
@@ -38,5 +39,9 @@
   "homepage": "https://github.com/lv7777/telma_server#readme",
   "engines": {
     "node": "5.4.0"
-  } 
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-plugin-node": "^1.5.1"
+  }
 }
