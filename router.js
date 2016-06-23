@@ -7,16 +7,15 @@ const ut=require("./utils.js");
 
 module.exports = function (socket) {
     const router = express.Router();
-    router.post("/",(req,res)=>{
+    // router.post("/",(req,res)=>{
         
-                console.log("/register");
-        // const data={
-        //     word:"tes"
-        // // };
+    //             console.log("/register");
+                
+    //             res.send
         
-        console.log(req.body)
+    //     console.log(req.body)
         
-    })
+    // })
     router.post('/login', function (req, res) {
         console.log("/login");
         if (req.body.username == "dammy" && req.body.password == "dammy") {
@@ -181,6 +180,16 @@ module.exports = function (socket) {
         console.log(req.body)
 
     });
+    
+    router.post("/",function(req,res){
+        
+        console.log("/test2");
+        console.log(req.body)
+        
+        res.send(res.body);
+
+        
+    })
     
     return router;
 };
