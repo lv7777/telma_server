@@ -16,7 +16,7 @@
   "main": "express.js",
   "scripts": {
     "test": "mocha test",
-    "start": "node main.js",
+    "start": "node express.js",
     "lint": "eslint main.js express.js router.js socketinit.js sql.js utils.js"
   },
   "repository": {
