@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "telma's server.",
   "dependencies": {
-    "express":"*"
+    "express":"*",
+    "body-parser":"*"
   },
   "main": "main.js",
   "repository": {
