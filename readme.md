@@ -56,6 +56,8 @@ socketioを使ってwebsocket通信を担当する。
 
 * passport
 
+(todo)
+
 * passport-twitter
 
 # express middleware
@@ -63,6 +65,14 @@ socketioを使ってwebsocket通信を担当する。
 * body-perser
 
 postを受け取るときに絶対必要。これがないとパラメータを受け取れない。
+
+* cookie-parser
+
+結局sessionがいることになったのでcookie-perserを使うことになった。
+
+* express-session
+
+sessionをgenerateする時とか。
 
 ## その他
 
@@ -80,3 +90,33 @@ github flowの派生版。
 # contributing
 
 `npm install`
+
+# deploy
+
+herokuを使う。
+
+herokuはmasterしかpushできないっぽい？
+
+(理論的にはdev branchからmasterにpushできるはずなんだけどできなかった。force使っても)
+
+heroku を使うときはちゃんとheroku用の設定を追加すること。
+
+# herokuのcontributing時のfrow
+```
+git clone telma-server
+# git リポジトリを持ってくる
+
+npm install
+# package.jsonに書いてあるライブラリをインストール
+
+# 何か処理を追加する
+
+git add
+git commit
+
+git push heroku master
+# herokuサーバーにアップロード
+
+heroku open
+# 何故かできない・・・
+```
