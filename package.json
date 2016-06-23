@@ -1,0 +1,22 @@
+{
+  "name": "telma_server",
+  "version": "1.0.0",
+  "description": "telma's server.",
+  "devDependencies": {
+    "express":"*"
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lv7777/telma_server.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "lv7777",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/lv7777/telma_server/issues"
+  },
+  "homepage": "https://github.com/lv7777/telma_server#readme"
+}
