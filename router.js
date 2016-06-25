@@ -12,10 +12,11 @@ module.exports = function (socket) {
         
         console.log("/");
         console.log(req.body)
-        console.log(res.body)
-        let data=JSON.parse(res.body);
-        console.log(typeof data)
-        res.send(data);
+        let a=req.body;
+        console.log(typeof a)
+       // let data=JSON.parse(res.body);
+        res.send(a);
+        
         
     });
     
