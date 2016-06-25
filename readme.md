@@ -60,6 +60,24 @@ socketioを使ってwebsocket通信を担当する。
 
 * passport-twitter
 
+* passport-facebook
+
+* passport-google
+
+# セキュリティ
+
+某キャン4cのオンラインアタック・ディフェンスでnode.jsサーバーを使うので最高かよ。
+
+ということでせっかくだからこのプロジェクトでセキュリティについても勉強して鯖をガチガチに固めておきたい。
+
+http://expressjs.com/ja/advanced/best-practice-security.html
+
+* helmet
+
+todo.
+
+
+
 # express middleware
 
 * body-perser
