@@ -12,8 +12,10 @@ module.exports = function (socket) {
         
         console.log("/");
         console.log(req.body)
-        
-        res.send(res.body);
+        console.log(res.body)
+        let data=JSON.parse(res.body);
+        console.log(typeof data)
+        res.send(data);
         
     });
     
@@ -47,8 +49,8 @@ router.get('/se', function(req, res) {
     res.send({
         hello:"sin"
     })
-
-    })
+    
+    })  
     
     router.post('/login', function (req, res) {
         console.log("/login");
@@ -217,9 +219,3 @@ router.get('/se', function(req, res) {
     
     return router;
 };
-
-// function qff(error,row,column){
-//   console.log("erorr   "+error);  
-//   console.log("row "+row)
-//   console.log("column  "+column)
-// }
