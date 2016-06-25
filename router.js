@@ -31,31 +31,23 @@ router.get('/se', function(req, res) {
     
     router.get("/sessiontest",(req,res)=>{
 
-        if (req.session) {
-            console.log(req.session);
+        var user=req.session.user;
+        if(!user){
+            user=req.session.user
         }
-        req.session.user = {
-            user: "hayo",
-            pass: "fuga"
-        };
+        console.log(user+" is user on express")
+        console.log("ID "+req.sessionID)
+        console.log("/sessiontest");
+        console.log(req.session);
+    //     if(req.session.SID)
+    //    // const session=req.session;
+    //    console.log("/sessiontest");
+    req.session.user="nana"
 
-    //     var user=req.session.user;
-    //     if(!user){
-    //         user=req.session.user
-    //     }
-    //     console.log(user+" is user on express")
-    //     console.log("ID "+req.sessionID)
-    //     console.log("/sessiontest");
-    //     console.log(req.session);
-    // //     if(req.session.SID)
-    // //    // const session=req.session;
-    // //    console.log("/sessiontest");
-    // user=req.session.user
-       res.send({
-           hello:"ok?"
-       })
-       
-       
+    res.send({
+        hello:"sin"
+    })
+
     })
     
     router.post('/login', function (req, res) {
