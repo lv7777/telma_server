@@ -39,5 +39,9 @@ module.exports={
   },
   notfound(obj){
     //渡されたvalueが列内にあるかどうか。テーブルもひつよう。
+  },
+  storesession(user,pass,session){
+    //user表にそいつが存在しているか確認。
+    //確認できればsession表にuserとsessionを記録。
   }
 };
